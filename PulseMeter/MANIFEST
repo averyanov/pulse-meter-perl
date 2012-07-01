@@ -16,13 +16,20 @@ lib/PulseMeter/Sensor/Timelined/UniqCounter.pm
 lib/PulseMeter/Sensor/UniqCounter.pm
 LICENSE
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
 README
-t/001_load.t
 t/01-Base.t
 t/02-Counter.t
 t/03-HashedIndicator.t
 t/04-Indicator.t
 t/05-UniqCounter.t
 t/06-Timeline.t
+t/07-TimelinedAverage.t
+t/08-TimelinedCounter.t
+t/09-TimelinedHashedCounter.t
+t/10-TimelinedMax.t
+t/11-TimelinedMin.t
+t/12-TimelinedUniqCounter.t
+t/13-TimelinedPercentile.t
+t/14-TimelinedMedian.t
 Todo
