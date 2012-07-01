@@ -1,5 +1,9 @@
-before_script: "cd PulseMeter && perl Makefile.pl"
-script: "cd PulseMeter && make test"
+language: perl
+perl:
+  - "5.14"
+  - "5.12"
+  - "5.10"
+script: 'perl Makefile.PL && make test'
 branches:
   only:
     - master
