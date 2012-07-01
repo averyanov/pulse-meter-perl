@@ -4,14 +4,14 @@ use warnings;
 use strict;
 use Test::More;
 use Redis;
-use PulseMeter::Sensor::Timeline;
+use Net::PulseMeter::Sensor::Timeline;
 
 my $params = {
     raw_data_ttl => 1000,
     interval => 100
 };
 
-my $s = PulseMeter::Sensor::Timeline->new("foo", %$params);
+my $s = Net::PulseMeter::Sensor::Timeline->new("foo", %$params);
 my $r = Redis->new;
 
 for ('raw_data_ttl', 'interval') {
@@ -22,9 +22,9 @@ for ('raw_data_ttl', 'interval') {
             "it returns $accessor passed to constructor"
         );
         ok(
-            PulseMeter::Sensor::Timeline::DEFAULTS->{$accessor}
+            Net::PulseMeter::Sensor::Timeline::DEFAULTS->{$accessor}
             ==
-            PulseMeter::Sensor::Timeline->new("foo")->$accessor,
+            Net::PulseMeter::Sensor::Timeline->new("foo")->$accessor,
             "it takes default value unless specified"
         );
     };

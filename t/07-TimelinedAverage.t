@@ -4,9 +4,9 @@ use warnings;
 use strict;
 use Test::More;
 use Redis;
-use PulseMeter::Sensor::Timelined::Average;
+use Net::PulseMeter::Sensor::Timelined::Average;
 
-my $s = PulseMeter::Sensor::Timelined::Average->new("foo");
+my $s = Net::PulseMeter::Sensor::Timelined::Average->new("foo");
 my $r = Redis->new;
 $r->flushdb;
 

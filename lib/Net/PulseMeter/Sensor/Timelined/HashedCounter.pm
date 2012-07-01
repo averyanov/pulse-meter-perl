@@ -1,8 +1,8 @@
-package PulseMeter::Sensor::Timelined::HashedCounter;
+package Net::PulseMeter::Sensor::Timelined::HashedCounter;
 use strict;
 use warnings 'all';
 
-use base qw/PulseMeter::Sensor::Timeline/;
+use base qw/Net::PulseMeter::Sensor::Timeline/;
 
 sub aggregate_event {
     my ($self, $key, $data) = @_;

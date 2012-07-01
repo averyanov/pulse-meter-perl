@@ -4,9 +4,9 @@ use warnings;
 use strict;
 use Test::More;
 use Redis;
-use PulseMeter::Sensor::Counter;
+use Net::PulseMeter::Sensor::Counter;
 
-my $s = PulseMeter::Sensor::Counter->new("foo");
+my $s = Net::PulseMeter::Sensor::Counter->new("foo");
 my $r = Redis->new;
     
 subtest 'describe .event' => sub {

@@ -1,4 +1,4 @@
-package PulseMeter::Sensor::Base;
+package Net::PulseMeter::Sensor::Base;
 use strict;
 use warnings 'all';
 

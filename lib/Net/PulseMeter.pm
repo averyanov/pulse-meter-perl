@@ -1,4 +1,4 @@
-package PulseMeter;
+package Net::PulseMeter;
 use strict;
 
 BEGIN {

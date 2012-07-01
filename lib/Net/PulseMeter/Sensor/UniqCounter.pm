@@ -1,8 +1,8 @@
-package PulseMeter::Sensor::UniqCounter;
+package Net::PulseMeter::Sensor::UniqCounter;
 use strict;
 use warnings 'all';
 
-use base qw/PulseMeter::Sensor::Counter/;
+use base qw/Net::PulseMeter::Sensor::Counter/;
 
 sub event {
     my ($self, $value) = @_;

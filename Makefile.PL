@@ -5,7 +5,7 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
     NAME         => 'PulseMeter',
-    VERSION_FROM => 'lib/PulseMeter.pm', # finds \$VERSION
+    VERSION_FROM => 'lib/Net/PulseMeter.pm', # finds \$VERSION
     AUTHOR       => 'Sergey Averyanov, Ilya Averyanov (averyanov@gmail.com, ilya.averyanov@gmail.com)',
     ABSTRACT     => 'Perl implementation of pulse-meter gem',
     PREREQ_PM    => {

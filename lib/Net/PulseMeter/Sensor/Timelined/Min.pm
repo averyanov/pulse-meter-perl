@@ -1,9 +1,9 @@
-package PulseMeter::Sensor::Timelined::Max;
+package Net::PulseMeter::Sensor::Timelined::Min;
 use strict;
 use warnings 'all';
 use Data::Uniqid qw/uniqid/;
 
-use base qw/PulseMeter::Sensor::Timeline/;
+use base qw/Net::PulseMeter::Sensor::Timeline/;
 
 sub aggregate_event {
     my ($self, $key, $value) = @_;
@@ -12,7 +12,7 @@ sub aggregate_event {
         $value,
         sprintf("%s::%s", $value, uniqid())
     );
-    $self->r->zremrangebyrank($key, 0, -2);
+    $self->r->zremrangebyrank($key, 1, -1);
 }
 
 1;

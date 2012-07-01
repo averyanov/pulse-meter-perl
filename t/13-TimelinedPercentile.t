@@ -4,9 +4,9 @@ use warnings;
 use strict;
 use Test::More;
 use Redis;
-use PulseMeter::Sensor::Timelined::Percentile;
+use Net::PulseMeter::Sensor::Timelined::Percentile;
 
-my $s = PulseMeter::Sensor::Timelined::Percentile->new("foo");
+my $s = Net::PulseMeter::Sensor::Timelined::Percentile->new("foo");
 my $r = Redis->new;
 $r->flushdb;
 

@@ -1,8 +1,8 @@
-package PulseMeter::Sensor::Timeline;
+package Net::PulseMeter::Sensor::Timeline;
 use strict;
 use warnings 'all';
 
-use base qw/PulseMeter::Sensor::Base/;
+use base qw/Net::PulseMeter::Sensor::Base/;
 
 use constant DEFAULTS => {
     raw_data_ttl => 3600,

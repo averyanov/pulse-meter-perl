@@ -4,9 +4,9 @@ use warnings;
 use strict;
 use Test::More;
 use Redis;
-use PulseMeter::Sensor::HashedIndicator;
+use Net::PulseMeter::Sensor::HashedIndicator;
 
-my $s = PulseMeter::Sensor::HashedIndicator->new("foo");
+my $s = Net::PulseMeter::Sensor::HashedIndicator->new("foo");
 my $r = Redis->new;
     
 subtest 'describe .event' => sub {

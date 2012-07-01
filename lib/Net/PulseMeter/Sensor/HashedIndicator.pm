@@ -1,8 +1,8 @@
-package PulseMeter::Sensor::HashedIndicator;
+package Net::PulseMeter::Sensor::HashedIndicator;
 use strict;
 use warnings 'all';
 
-use base qw/PulseMeter::Sensor::Indicator/;
+use base qw/Net::PulseMeter::Sensor::Indicator/;
 
 sub event {
     my ($self, $data) = @_;
