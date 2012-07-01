@@ -1,4 +1,0 @@
-language: perl
-perl:
-  - "5.12"
-before_script: "cd PulseMeter"
