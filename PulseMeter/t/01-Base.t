@@ -2,7 +2,6 @@
 
 use warnings;
 use strict;
-use lib '../lib'; #TODO remove
 use Test::More;
 use Redis;
 use PulseMeter::Sensor::Base;
