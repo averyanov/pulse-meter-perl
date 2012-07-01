@@ -3,8 +3,7 @@ perl:
   - "5.14"
   - "5.12"
   - "5.10"
-before_script: "cd PulseMeter && perl Makefile.pl"
-script: "cd PulseMeter && make test"
+script: 'perl Makefile.PL && make test'
 branches:
   only:
     - master
