@@ -1,6 +1,0 @@
-before_script: "perl Makefile.pl"
-script: "make test"
-branches:
-  only:
-    - master
-    - develop

@@ -1,0 +1,6 @@
+before_script: "cd PulseMeter && perl Makefile.pl"
+script: "cd PulseMeter && make test"
+branches:
+  only:
+    - master
+    - develop
