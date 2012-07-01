@@ -10,6 +10,7 @@ WriteMakefile(
     ABSTRACT     => 'Perl implementation of pulse-meter gem',
     PREREQ_PM    => {
                      'Test::Simple' => 0.44,
-                     'Redis' => 1.951
+                     'Redis' => 1.951,
+                     'Data::Uniqid' => 0.11,
                     },
 );
