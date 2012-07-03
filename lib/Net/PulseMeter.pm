@@ -4,32 +4,13 @@ use strict;
 BEGIN {
     use Exporter ();
     use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
-    $VERSION     = '0.01';
+    $VERSION     = '0.02';
     @ISA         = qw(Exporter);
     #Give a hoot don't pollute, do not export more than needed by default
     @EXPORT      = qw();
     @EXPORT_OK   = qw();
     %EXPORT_TAGS = ();
 }
-
-
-#################### subroutine header begin ####################
-
-=head2 sample_function
-
- Usage     : How to use this function/method
- Purpose   : What it does
- Returns   : What it returns
- Argument  : What it wants to know
- Throws    : Exceptions and other anomolies
- Comment   : This is a sample subroutine header.
-           : It is polite to include more pod and fewer comments.
-
-See Also   : 
-
-=cut
-
-#################### subroutine header end ####################
 
 
 sub new
@@ -43,9 +24,6 @@ sub new
 
 
 #################### main pod documentation begin ###################
-## Below is the stub of documentation for your module. 
-## You better edit it!
-
 
 =head1 NAME
 
@@ -53,35 +31,36 @@ PulseMeter - Perl implementation of pulse-meter gem
 
 =head1 SYNOPSIS
 
-  use PulseMeter;
-  blah blah blah
+  use Net::PulseMeter::Sensor::Timelined::Counter;
+  my $sensor = Net::PulseMeter::Sensor::Timelined::Counter->new(
+    "sensor_name",
+    raw_data_ttl => 3600,
+    interval => 10,
+    redis => {
+      host => 'localhost',
+      port => 6379,
+      db => 2
+    }
+  );
+  $sensor->event(10);
 
 
 =head1 DESCRIPTION
 
-Stub documentation for this module was created by ExtUtils::ModuleMaker.
-It looks like the author of the extension was negligent enough
-to leave the stub unedited.
+This module is a minimal implementation of L<pulse-meter gem|https://github.com/savonarola/pulse-meter> client.
+You can read more about pulse-meter concepts and features in L<gem documentation|https://github.com/savonarola/pulse-meter#features>.
 
-Blah blah blah.
+This module's main purpose is to allow send data to static or timelined 
+sensors from perl client. Note that it just sends data, nothing more: 
+no summarization and visualization is provided.
 
-
-=head1 USAGE
-
-
-
-=head1 BUGS
-
-
-
-=head1 SUPPORT
-
+Basic usage is described in section above. Other sensors are initialized 
+in the same way similar to their ruby counterparts.
 
 
 =head1 AUTHOR
 
     Sergey Averyanov, Ilya Averyanov
-    CPAN ID: MODAUTHOR
     averyanov@gmail.com, ilya.averyanov@gmail.com
 
 =head1 COPYRIGHT
@@ -93,15 +72,8 @@ The full text of the license can be found in the
 LICENSE file included with this module.
 
 
-=head1 SEE ALSO
-
-perl(1).
-
 =cut
 
 #################### main pod documentation end ###################
 
-
 1;
-# The preceding line will help the module return a true value
-
