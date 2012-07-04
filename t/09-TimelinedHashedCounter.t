@@ -2,12 +2,15 @@
 
 use warnings;
 use strict;
+use lib 't/tlib';
 use Test::More;
-use Redis;
+use MockedRedis;
+use Net::PulseMeter::Sensor::Base;
 use Net::PulseMeter::Sensor::Timelined::HashedCounter;
 
+my $r = MockedRedis->new;
+Net::PulseMeter::Sensor::Base->redis($r);
 my $s = Net::PulseMeter::Sensor::Timelined::HashedCounter->new("foo");
-my $r = Redis->new;
 $r->flushdb;
 
 $s->event({foo => 1, bar => 2});

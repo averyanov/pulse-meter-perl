@@ -6,11 +6,7 @@ use base qw/Exporter/;
 use Data::Dumper;
 use Redis;
 
-use constant REDIS_DEFAULTS => {
-    host => 'localhost',
-    port => 6379,
-    db => 0
-};
+our $redis;
 
 sub new {
     my $class = shift;
@@ -21,23 +17,16 @@ sub new {
 }
 
 sub init {
-    my $self = shift;
-    my $name = shift;
-    my $opts = {@_};
-
-    my $redis_options = $opts->{redis} || {};
-    $redis_options->{$_} ||= REDIS_DEFAULTS->{$_} for qw/host port db/;
-    my $redis = Redis->new(
-         server => sprintf("%s:%s", $redis_options->{host}, $redis_options->{port})
-    );
-    $redis->select($redis_options->{db});
-    $self->{redis} = $redis;
-
+    my ($self, $name) = @_;
     $self->{name} = $name;
 }
 
-sub r { shift->{redis} }
-sub redis { r(@_) }
+sub r { $redis }
+sub redis {
+    my ($self, $r) = @_;
+    $redis = $r if ($r);
+    return $redis;
+}
 sub name { shift->{name} }
 
 1;

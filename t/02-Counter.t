@@ -2,12 +2,15 @@
 
 use warnings;
 use strict;
+use lib 't/tlib';
 use Test::More;
-use Redis;
+use MockedRedis;
+use Net::PulseMeter::Sensor::Base;
 use Net::PulseMeter::Sensor::Counter;
 
+my $r = MockedRedis->new;
+Net::PulseMeter::Sensor::Base->redis($r);
 my $s = Net::PulseMeter::Sensor::Counter->new("foo");
-my $r = Redis->new;
     
 subtest 'describe .event' => sub {
     $s->redis->flushdb;

@@ -7,16 +7,17 @@ Pulse-meter minimal port to Perl
 
 ## Basic usage
 
+    use Redis;
+    use Net::PulseMeter::Sensor::Base;
     use Net::PulseMeter::Sensor::Timelined::Counter;
+
+    my $redis = Redis->new;
+    Net::PulseMeter::Sensor::Base->redis($redis);
+
     my $sensor = Net::PulseMeter::Sensor::Timelined::Counter->new(
       "sensor_name",
       raw_data_ttl => 3600,
-      interval => 10,
-      redis => {
-        host => 'localhost',
-        port => 6379,
-        db => 2
-      }
+      interval => 10
     );
     $sensor->event(10);
 

@@ -12,5 +12,6 @@ WriteMakefile(
                      'Test::Simple' => 0.44,
                      'Redis' => 1.951,
                      'Data::Uniqid' => 0.11,
+                     'Test::Mock::Redis' => 0.08,
                     },
 );

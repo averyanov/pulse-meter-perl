@@ -4,7 +4,7 @@ use strict;
 BEGIN {
     use Exporter ();
     use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS);
-    $VERSION     = '0.02';
+    $VERSION     = '0.03';
     @ISA         = qw(Exporter);
     #Give a hoot don't pollute, do not export more than needed by default
     @EXPORT      = qw();
@@ -31,16 +31,17 @@ PulseMeter - Perl implementation of pulse-meter gem
 
 =head1 SYNOPSIS
 
+  use Redis;
+  use Net::PulseMeter::Sensor::Base;
   use Net::PulseMeter::Sensor::Timelined::Counter;
+
+  my $redis = Redis->new;
+  Net::PulseMeter::Sensor::Base->redis($redis);
+
   my $sensor = Net::PulseMeter::Sensor::Timelined::Counter->new(
     "sensor_name",
     raw_data_ttl => 3600,
-    interval => 10,
-    redis => {
-      host => 'localhost',
-      port => 6379,
-      db => 2
-    }
+    interval => 10
   );
   $sensor->event(10);
 

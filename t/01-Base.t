@@ -2,8 +2,9 @@
 
 use warnings;
 use strict;
+use lib 't/tlib';
 use Test::More;
-use Redis;
+use MockedRedis;
 use Net::PulseMeter::Sensor::Base;
 
 subtest 'describe .name' => sub {
@@ -15,19 +16,13 @@ subtest 'describe .name' => sub {
 };
 
 subtest 'describe .redis' => sub {
-    my $base = Net::PulseMeter::Sensor::Base->new("foo",
-        redis => {
-            host => '127.0.0.1'
-        }
-    );
-    ok(
-        ref($base->redis) eq 'Redis',
-        "it returns redis instance"
-    );
+    my $redis = MockedRedis->new;
+    Net::PulseMeter::Sensor::Base->redis($redis);
 
+    my $base = Net::PulseMeter::Sensor::Base->new("foo");
     ok(
-        $base->redis->{server} eq '127.0.0.1:6379',
-        "it uses connection options from constructor"
+        ref($base->redis) eq 'MockedRedis',
+        "it takes and returns redis instance"
     );
 };
 
