@@ -9,6 +9,8 @@ lib/Net/PulseMeter/Sensor/Timeline.pm
 lib/Net/PulseMeter/Sensor/Timelined/Average.pm
 lib/Net/PulseMeter/Sensor/Timelined/Counter.pm
 lib/Net/PulseMeter/Sensor/Timelined/HashedCounter.pm
+lib/Net/PulseMeter/Sensor/Timelined/HashedIndicator.pm
+lib/Net/PulseMeter/Sensor/Timelined/Indicator.pm
 lib/Net/PulseMeter/Sensor/Timelined/Max.pm
 lib/Net/PulseMeter/Sensor/Timelined/Median.pm
 lib/Net/PulseMeter/Sensor/Timelined/Min.pm
@@ -34,4 +36,7 @@ t/11-TimelinedMin.t
 t/12-TimelinedUniqCounter.t
 t/13-TimelinedPercentile.t
 t/14-TimelinedMedian.t
+t/15-TimelinedIndicator.t
+t/16-TimelinedHashedIndicator.t
+t/tlib/MockedRedis.pm
 Todo
