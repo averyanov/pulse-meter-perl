@@ -21,7 +21,7 @@ $s->event({foo => 10, bar => 20});
 my $key = $s->current_raw_data_key;
 is_deeply(
     {$r->hgetall($key)},
-    {foo => 11, bar => 22},
+    {foo => 11, bar => 22, total => 33},
     "it saves multiple events count to interval"
 );
 
