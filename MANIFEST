@@ -3,6 +3,7 @@ Changes
 lib/Net/PulseMeter.pm
 lib/Net/PulseMeter/Sensor/Base.pm
 lib/Net/PulseMeter/Sensor/Counter.pm
+lib/Net/PulseMeter/Sensor/HashedCounter.pm
 lib/Net/PulseMeter/Sensor/HashedIndicator.pm
 lib/Net/PulseMeter/Sensor/Indicator.pm
 lib/Net/PulseMeter/Sensor/Timeline.pm
@@ -14,6 +15,7 @@ lib/Net/PulseMeter/Sensor/Timelined/Indicator.pm
 lib/Net/PulseMeter/Sensor/Timelined/Max.pm
 lib/Net/PulseMeter/Sensor/Timelined/Median.pm
 lib/Net/PulseMeter/Sensor/Timelined/Min.pm
+lib/Net/PulseMeter/Sensor/Timelined/MultiPercentile.pm
 lib/Net/PulseMeter/Sensor/Timelined/Percentile.pm
 lib/Net/PulseMeter/Sensor/Timelined/UniqCounter.pm
 lib/Net/PulseMeter/Sensor/UniqCounter.pm
@@ -38,5 +40,7 @@ t/13-TimelinedPercentile.t
 t/14-TimelinedMedian.t
 t/15-TimelinedIndicator.t
 t/16-TimelinedHashedIndicator.t
+t/17-HashedCounter.t
+t/18-TimelinedMultiPercentile.t
 t/tlib/MockedRedis.pm
 Todo
